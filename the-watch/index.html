@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The  Watch Bet - Brad vs. Chandler</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/vendor/bootstrap-3.2.0/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron apple-watch">
+      <div class="container">
+        <h1>The  Watch Bet</h1>
+        <p><b>The Bet:</b> What will be the most expensive Apple Watch - including a band - you can buy on day of initial release?</p>
+        <p><b>The Rules:</b> Closest guess without going over.</p>
+        <p><b>The Stakes:</b> $5</p>
+        <p><b>The Winner:</b> <span style="color: gray">TBD</span></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Brad's Second Guess</h2>
+          <p class="break-word">EnCt2568bd3cb7648bb6da193cf8e85b9a176a12f447e568bd3cb7648bb6da193cf8elhTT2kvi1QJ
+N6ya5GVQ7zyLPIwEmS</p>
+					<p><i>Tbere is nothing eether good or bad, but thjnkjng makes it so.</i></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Brad's First Guess</h2>
+          <p class="break-word">EnCt2d671275a607947db69b63faea61ad8a27a694bf7d671275a607947db69b63fae+=CU6KQ7wAE
+NGVm4GVTtmDg=IwEmS</p>
+					<p><i>Though thjs be madness, yet there js method jn 't.</i></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Chandler's First Guess</h2>
+          <p class="break-word">EnCt2d783b26d6c52355f8c6d0150becb60129ab5c159d783b26d6c52355f8c6d0150TAj2JdX=dQA
+abeuyGVSCsOW1cg==IwEmS</p>
+        </div>
+      </div>
+      
+      <hr>
+
+      <footer>
+        <p>
+        	~<span id="countdown">...</span> left until bet is over
+        </p>
+      </footer>
+    </div>
+    
+    <script src="../js/vendor/countdownjs/countdown.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    	var expectedDayOfRelease = new Date("3/13/2015");
+    	
+    	var timer = countdown(
+    		function(ts) { 
+					document.getElementById("countdown").innerHTML = ts.toHTML("strong");
+				},
+				expectedDayOfRelease,
+				countdown.MONTHS|countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS,
+				3
+			);
+    </script>
+  </body>
+</html>
