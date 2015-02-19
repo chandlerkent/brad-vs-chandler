@@ -40,7 +40,7 @@
       <hr>
 
       <footer>
-        <p>Apple's current Market Capitalization: <span id="market-cap"></span></p>
+        <p>Apple's current Market Capitalization: <span id="market-cap">...</span></p>
       </footer>
     </div>
   </body>
@@ -48,7 +48,12 @@
     var url = "https://query.yahooapis.com/v1/public/yql?q=select%20MarketCapitalization%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22AAPL%22)%0A%09%09&format=json&diagnostics=true&env=http%3A%2F%2Fdatatables.org%2Falltables.env&callback";
     var request = new XMLHttpRequest();
     request.onload = function onLoad() {
-      console.log(this, this.responseText);
+      var el = document.getElementById("market-cap");
+      if (!el) return;
+      
+      var response = JSON.parse(this.response);
+      console.log(response);
+      el.innerText = "$" + response.results.quote.MarketCapitalization;
     };
     request.open("get", url, true);
     request.send();
