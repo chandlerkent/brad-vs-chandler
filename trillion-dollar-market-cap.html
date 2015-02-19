@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Trillion Dollar Market Cap - Brad vs. Chandler</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/vendor/bootstrap-3.2.0/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron apple-watch">
+      <div class="container">
+	      <h1>Trillion Dollar Company</h1>
+        <p><b>The Bet:</b> What year will <a href="http://finance.yahoo.com/q?s=AAPL">Apple's market cap</a> surpass $1 trillion?</p>
+        <p><b>The Rules:</b> Guess the correct year.</p>
+        <p><b>The Stakes:</b> $5</p>
+        <p><b>The Winner:</b> TBD</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      	<div class="col-md-4">
+          <h2>Brad's Guess</h2>
+          <p><b>2015</b></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Chandler's Guess</h2>
+          <p><b>2016</b></p>
+        </div>
+      </div>
+      <hr>
+
+      <footer>
+        <p>Apple's current Market Capitalization: <span id="market-cap"></span></p>
+      </footer>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var url = "https://query.yahooapis.com/v1/public/yql?q=select%20MarketCapitalization%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22AAPL%22)%0A%09%09&format=json&diagnostics=true&env=http%3A%2F%2Fdatatables.org%2Falltables.env&callback";
+    var request = new XMLHttpRequest();
+    request.onload = function onLoad() {
+      console.log(this, this.responseText);
+    };
+    request.open("get", url, true);
+    request.send();
+  </script>
+</html>
