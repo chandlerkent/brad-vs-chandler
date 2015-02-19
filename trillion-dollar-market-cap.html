@@ -41,7 +41,7 @@
 
       <footer>
         <p>Apple's current Market Capitalization: <span id="market-cap">...</span></p>
-        <p>Time until Brad loses: <span id="brad-is-a-loser">...</span></p>
+        <p>Time until Brad loses: ~<span id="brad-is-a-loser">...</span></p>
       </footer>
     </div>
   </body>
@@ -59,6 +59,7 @@
     request.open("get", url, true);
     request.send();
   </script>
+  <script src="../js/vendor/countdownjs/countdown.min.js" type="text/javascript"></script>
   <script type="text/javascript">
 	var endOf2015 = new Date("12/31/2015");
 	
