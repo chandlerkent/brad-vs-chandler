@@ -52,8 +52,8 @@
       if (!el) return;
       
       var response = JSON.parse(this.response);
-      console.log(response);
-      el.innerText = "$" + response.results.quote.MarketCapitalization;
+
+      el.innerText = "$" + response.query.results.quote.MarketCapitalization;
     };
     request.open("get", url, true);
     request.send();
